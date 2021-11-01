@@ -1,4 +1,13 @@
-import { checkType } from './utils/checkType';
-import './scss/main.scss';
+// case 1.
+import * as Vue from 'vue'; 
+import App from './App.vue'
 
-console.log(checkType());
+const app = Vue.createApp(App); 
+app.mount('#app');
+
+// case 2.
+// import { createApp } from 'vue'; 
+// import App from './App.vue'
+
+// const app = createApp(App); 
+// app.mount('#app');
