@@ -4,14 +4,17 @@
     {{ message }}
   </h1>
   <HelloWorld class="active" />
+  <TheButton />
 </template>
 
 <script>
 import HelloWorld from '~/components/HelloWorld.vue';
+import TheButton from '~/components/TheButton.vue';
 
 export default {
   components: {
-    HelloWorld
+    HelloWorld,
+    TheButton
   },
   data() {
     return {

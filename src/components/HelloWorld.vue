@@ -5,19 +5,15 @@
   <div v-bind="$attrs">
     Hello World
   </div>
-  <div>
-    Hello World
-  </div>
-  <div>
-    Hello World
-  </div>
 </template>
 
 <script>
-export default {
-  props: {
+import sample from '~/mixins/sample.js';
 
-  }
+export default {
+  mixins: [sample],
+  // 속성 자동 상속 방지
+  inheritAttrs: false
 }
 </script>
 
