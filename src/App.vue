@@ -1,21 +1,21 @@
 <!-- 기본 구조 : template(=html), script, style -->
 <template> 
-  <h1>{{ message }}</h1>
-  <TextField message="BOMI" :count="count" />
-  <button @click="count += 1">Increase</button>
+  <h1>
+    {{ message }}
+  </h1>
+  <HelloWorld class="active" />
 </template>
 
 <script>
-import TextField from '~/components/TextField';
+import HelloWorld from '~/components/HelloWorld.vue';
 
 export default {
   components: {
-    TextField
+    HelloWorld
   },
   data() {
     return {
-      message: 'Hello Vue SFC',
-      count: 7
+      message: 'Hello Vue'
     }
   }
 }
