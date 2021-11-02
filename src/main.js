@@ -2,12 +2,14 @@
 import * as Vue from 'vue'; 
 import App from './App.vue';
 import { fetch } from '~/plugins'
+import store from './store';
 
 const app = Vue.createApp(App);
 // .use: 플러그인 연결
 app.use(fetch, {
   endpoint: 'https://www.omdbapi.com'
 });
+app.use(store);
 app.mount('#app');
 
 // case 2.

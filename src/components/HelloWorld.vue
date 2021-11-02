@@ -1,10 +1,5 @@
 <template>
-  <div>
-    Hello World
-  </div>
-  <div v-bind="$attrs">
-    Hello World
-  </div>
+  <div>{{ $store.state.bomi }}</div>
 </template>
 
 <script>
