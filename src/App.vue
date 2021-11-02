@@ -20,6 +20,10 @@ export default {
     return {
       message: 'Hello Vue'
     }
+  },
+  async mounted() {
+    const res = await this.$fetchMovie('frozen');
+    console.log(res);
   }
 }
 </script>
