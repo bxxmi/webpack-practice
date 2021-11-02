@@ -1,13 +1,17 @@
 <template>
-  <input type="text" :value="message"/>
+  <input 
+    type="text" 
+    :value="modelValue"
+    @input="$emit('update:modelValue', $event.target.value)" />
   <div>{{ count }}</div>
 </template>
 
 <script>
 export default {
+  emits: ['update:modelValue'],
   // props: ['부모 컴포넌트에서 받아온 데이터']
   props: {
-    message: {
+    modelValue: {
       type: String,
       default: ''
     },
