@@ -8,10 +8,10 @@
     v-model="message"
     type="text" /> -->
   <TheHeader />
-  <input
+  <!-- <input
     v-model="searchText"
     type="text"
-    @keyup.enter="fetchMovie" />
+    @keyup.enter="fetchMovie" /> -->
   <div
     v-for="movie in movies"
     :key="movie.imdbID"
