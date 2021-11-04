@@ -1,9 +1,10 @@
 // case 1.
 import * as Vue from 'vue'; 
 import App from './App.vue';
-import { fetch } from '~/plugins'
+import { fetch } from '~/plugins';
 import store from './store';
 import router from './routes';
+import '~/routes/guards';
 
 const app = Vue.createApp(App);
 // .use: 플러그인 연결

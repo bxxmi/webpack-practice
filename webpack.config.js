@@ -65,6 +65,9 @@ module.exports = (env, options) => {
       }),
       new VueLoaderPlugin()
     ],
+    devServer: {
+      historyApiFallback: true
+    }
     // 기본값이지만 필요 시 수정해야함
     // devServer: {
     //   port: 8080,
