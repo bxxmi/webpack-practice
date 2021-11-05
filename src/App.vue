@@ -7,32 +7,56 @@
   <input
     v-model="message"
     type="text" /> -->
-  <TheHeader />
+  <!-- <TheHeader /> -->
   <!-- <input
     v-model="searchText"
     type="text"
     @keyup.enter="fetchMovie" /> -->
-  <div
+  <!-- <div
     v-for="movie in movies"
     :key="movie.imdbID"
     @click="moveTo(movie.imdbID)">
     {{ movie.Title }}  
   </div>
-  <RouterView />
+  <RouterView /> -->
+  <TheModal
+    v-model="isShow">
+    <template #activator="{ attrs }">
+      <!-- button v-bind="{ onclick: onModal }"과 동일 -->
+      <button v-bind="attrs">
+        On Modal
+      </button>
+    </template>
+    <template #default>
+      <h1>Hello Modal</h1>
+      <button @click="isShow = false">
+        닫기!!!
+      </button>
+    </template>
+  </TheModal>
+  <UserName
+    v-for="user in users"
+    :key="user.id" 
+    :user="user" />
 </template>
 
 <script>
 import axios from 'axios';
-import TheHeader from '~/components/TheHeader';
+// import TheHeader from '~/components/TheHeader';
+import UserName from '~/components/UserName.vue';
+// json 파일 가져오기
+import names from '~/data/names.json';
 
 export default {
   components: {
-    TheHeader
+    UserName
   },
   data() {
     return {
-      searchText: '',
-      movies: []
+      // searchText: '',
+      // movies: []
+      users: names,
+      isShow: false
     }
   },
   methods: {

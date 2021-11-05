@@ -6,9 +6,13 @@ import MovieTitle from './MovieTitle.vue';
 import MoviePoster from './MoviePoster.vue';
 import MovieHeader from './MovieHeader.vue';
 import SignIn from './SignIn.vue';
+import NotFound from './NotFound.vue';
 
 export default createRouter({
   history: createWebHistory(),
+  // scrollBehavior: 페이지 이동 시 스크롤을 제어할 수 있음
+  // vue router 사용 시 필수적인 속성이다.
+  scrollBehavior: () => ({ top: 0, left: 0 }),
   routes: [
     {
       path: '/',
@@ -46,6 +50,11 @@ export default createRouter({
           component: MoviePoster
         }
       ]
+    },
+    // 404 지정
+    {
+      path: '/:bomi(.*)',
+      component: NotFound
     }
   ]
 })

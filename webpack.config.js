@@ -47,7 +47,15 @@ module.exports = (env, options) => {
             'vue-style-loader',
             'css-loader',
             'postcss-loader',
-            'sass-loader'
+            {
+              loader: 'sass-loader',
+              options: {
+                // 전체적으로 적용할 scss 파일을 전역으로 사용할 수 있게 한다.
+                // 단, 적용될 컴포넌트들의 스타일 태그에는 다음과 같아야한다.
+                // <style lang="scss">
+                additionalData: '@import "~/scss/main.scss";'
+              }
+            }
           ]
         }
       ]
