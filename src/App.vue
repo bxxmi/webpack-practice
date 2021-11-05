@@ -19,6 +19,21 @@
     {{ movie.Title }}  
   </div>
   <RouterView /> -->
+  <TheModal
+    v-model="isShow">
+    <template #activator="{ attrs }">
+      <!-- button v-bind="{ onclick: onModal }"과 동일 -->
+      <button v-bind="attrs">
+        On Modal
+      </button>
+    </template>
+    <template #default>
+      <h1>Hello Modal</h1>
+      <button @click="isShow = false">
+        닫기!!!
+      </button>
+    </template>
+  </TheModal>
   <UserName
     v-for="user in users"
     :key="user.id" 
@@ -40,7 +55,8 @@ export default {
     return {
       // searchText: '',
       // movies: []
-      users: names
+      users: names,
+      isShow: false
     }
   },
   methods: {
