@@ -7,32 +7,40 @@
   <input
     v-model="message"
     type="text" /> -->
-  <TheHeader />
+  <!-- <TheHeader /> -->
   <!-- <input
     v-model="searchText"
     type="text"
     @keyup.enter="fetchMovie" /> -->
-  <div
+  <!-- <div
     v-for="movie in movies"
     :key="movie.imdbID"
     @click="moveTo(movie.imdbID)">
     {{ movie.Title }}  
   </div>
-  <RouterView />
+  <RouterView /> -->
+  <UserName
+    v-for="user in users"
+    :key="user.id" 
+    :user="user" />
 </template>
 
 <script>
 import axios from 'axios';
-import TheHeader from '~/components/TheHeader';
+// import TheHeader from '~/components/TheHeader';
+import UserName from '~/components/UserName.vue';
+// json 파일 가져오기
+import names from '~/data/names.json';
 
 export default {
   components: {
-    TheHeader
+    UserName
   },
   data() {
     return {
-      searchText: '',
-      movies: []
+      // searchText: '',
+      // movies: []
+      users: names
     }
   },
   methods: {
