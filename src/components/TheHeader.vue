@@ -9,3 +9,10 @@
     </RouterLink>
   </header>
 </template>
+
+<style lang="scss" scoped>
+header {
+  position: fixed;
+  top: 0;
+}
+</style>

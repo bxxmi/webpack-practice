@@ -8,6 +8,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+h1 {
+  color: $color-danger;
+}
 </style>
